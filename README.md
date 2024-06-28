@@ -10,7 +10,7 @@ GitHub Action for writing to a Discord webhook.
 
 ### `message`
 
-**Required** Send a plain message to the webhook.
+**Required** The message contents to send.
 
 ### `name`
 

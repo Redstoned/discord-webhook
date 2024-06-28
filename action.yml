@@ -12,6 +12,10 @@ inputs:
     description: The webhook endpoint to write to.
     required: yes
 
+  message:
+    description: The message contents to send.
+    required: yes
+
   name:
     description: The username to identify as with Discord.
     default: Action Bot 900
@@ -25,10 +29,6 @@ inputs:
 
   title:
     description: Set the title of the notification.
-
-  message:
-    description: The message contents to send.
-    required: yes
 
   format:
     description: Apply the standard message template.

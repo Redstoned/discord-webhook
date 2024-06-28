@@ -49,8 +49,3 @@ except discourier.webhook.ErrorWebhookTimeout:
 except discourier.webhook.ErrorRequestProblem as err:
   logger.error(f"There is likely an issue with your settings for this Action.")
   logger.error(f"Received error code {err.code}: {err.msg}.")
-
-if res.ok():
-  logger.notice("webhook payload successfully delivered.")
-else:
-  logger.error(f"Payload for {kind} received unexpected code {res.code}.")

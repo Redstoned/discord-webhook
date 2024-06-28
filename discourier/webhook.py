@@ -30,7 +30,7 @@ class Webhook:
     self.session = requests.Session()
 
     self.session.headers.update({
-      "User-Agent": "gh/uplime/discord-webhook"
+      "User-Agent": "gh/redstoned/discord-webhook"
     })
 
   def wire(self, msg, title=None):

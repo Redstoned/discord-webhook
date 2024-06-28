@@ -1,17 +1,17 @@
-import discohook.kinds
-import discohook.logger
-import discohook.util
-import discohook.webhook
+import discourier.kinds
+import discourier.logger
+import discourier.util
+import discourier.webhook
 
-logger = discohook.logger.Logger()
+logger = discourier.logger.Logger()
 
-url = discohook.util.lookup("url")
-usr = discohook.util.lookup("name")
-pfp = discohook.util.lookup("avatar")
-lvl = discohook.util.lookup("level")
-fmt = discohook.util.lookup("format")
-ttl = discohook.util.lookup("title")
-msg = discohook.util.lookup("message")
+url = discourier.util.lookup("url")
+usr = discourier.util.lookup("name")
+pfp = discourier.util.lookup("avatar")
+lvl = discourier.util.lookup("level")
+fmt = discourier.util.lookup("format")
+ttl = discourier.util.lookup("title")
+msg = discourier.util.lookup("message")
 
 logger.debug(f"Webhook endpoint is {url}")
 logger.debug(f"Username for payload is {usr}")
@@ -27,16 +27,16 @@ else:
 logger.debug(f"Title for payload is {ttl}")
 logger.debug(f"Payload message is {msg}")
 
-kind = discohook.kinds.WebhookMessage
+kind = discourier.kinds.WebhookMessage
 
-if lvl not in discohook.kinds.WEBHOOK_KINDS:
+if lvl not in discourier.kinds.WEBHOOK_KINDS:
   logger.warning(f"Unknown message kind {lvl}")
   logger.warning("Using a plain payload.")
 else:
-  kind = discohook.kinds.WEBHOOK_KINDS[lvl]
+  kind = discourier.kinds.WEBHOOK_KINDS[lvl]
 
 try:
-  hook = discohook.webhook.Webhook(url, user=usr, avatar=pfp)
+  hook = discourier.webhook.Webhook(url, user=usr, avatar=pfp)
   res = hook.wire(kind(msg, fmt=fmt), title=ttl)
 
   if res.ok():
@@ -44,9 +44,9 @@ try:
   else:
     logger.error(f"Received unexpected error {res.code}: {res.msg}.")
 
-except discohook.webhook.ErrorWebhookTimeout:
+except discourier.webhook.ErrorWebhookTimeout:
   logger.error("Connection timed out while trying to connect to Discord.")
-except discohook.webhook.ErrorRequestProblem as err:
+except discourier.webhook.ErrorRequestProblem as err:
   logger.error(f"There is likely an issue with your settings for this Action.")
   logger.error(f"Received error code {err.code}: {err.msg}.")
 

@@ -1,4 +1,4 @@
-import discohook.util
+import discourier.util
 
 class WebhookMessage:
   def __init__(self, msg, fmt=False):
@@ -6,16 +6,16 @@ class WebhookMessage:
     self.fmt = fmt
 
   def color(self):
-    return None # None
+    return None
 
   def asGithub(self):
-    actor = discohook.util.lookup("triggering_actor", prefix="GITHUB")
-    attempt = discohook.util.lookup("run_attempt", prefix="GITHUB")
-    repo = discohook.util.lookup("repository", prefix="GITHUB")
-    run = discohook.util.lookup("run_number", prefix="GITHUB")
-    run_id = discohook.util.lookup("run_id", prefix="GITHUB")
-    sha = discohook.util.lookup("sha", prefix="GITHUB")
-    url = discohook.util.lookup("server_url", prefix="GITHUB")
+    actor = discourier.util.lookup("triggering_actor", prefix="GITHUB")
+    attempt = discourier.util.lookup("run_attempt", prefix="GITHUB")
+    repo = discourier.util.lookup("repository", prefix="GITHUB")
+    run = discourier.util.lookup("run_number", prefix="GITHUB")
+    run_id = discourier.util.lookup("run_id", prefix="GITHUB")
+    sha = discourier.util.lookup("sha", prefix="GITHUB")
+    url = discourier.util.lookup("server_url", prefix="GITHUB")
 
     repo_url = f"{url}/{repo}"
     commit_url = f"{repo_url}/commit"

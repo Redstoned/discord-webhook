@@ -1,12 +1,16 @@
 # Discord Webhook
 
-GitHub Action for writing to a Discord Webhook.
+GitHub Action for writing to a Discord webhook.
 
 ## Inputs
 
 ### `url`
 
 **Required** The webhook endpoint to write to.
+
+### `message`
+
+**Required** Send a plain message to the webhook.
 
 ### `name`
 
@@ -23,10 +27,6 @@ The notification level to use.
 ### `title`
 
 Set the title of the notification.
-
-### `message`
-
-**Required** Send a plain message to the webhook.
 
 ### `format`
 

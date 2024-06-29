@@ -39,7 +39,7 @@ Exit with a failure code.
 ## Example usage
 
 ```yaml
-uses: uplime/discord-webhook@v1.1
+uses: Redstoned/discord-webhook@v2
 with:
   url: https://discord.com/api/webhooks/123457890/correct-horse-battery-staple
   level: error

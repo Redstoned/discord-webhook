@@ -34,6 +34,10 @@ inputs:
     description: Apply the standard message template.
     default: no
 
+  fail:
+    description: Exit with a failure code.
+    default: no
+
 runs:
   using: docker
   image: Dockerfile

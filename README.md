@@ -32,6 +32,10 @@ Set the title of the notification.
 
 Apply the standard message template.
 
+### `fail`
+
+Exit with a failure code.
+
 ## Example usage
 
 ```yaml
